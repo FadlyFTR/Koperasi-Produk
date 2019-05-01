@@ -23,13 +23,257 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="Det_Pemb" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="Nama_Pemb" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtNama_Pemb" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Email_Pemb" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtEmail_Pemb" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Telp_Pemb" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtTelp_Pemb" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Alamat_Peng" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="205" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="Ongkir1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="47" max="32767" attributes="0"/>
+                              <Component id="Ongkir" min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="Ringk_Bel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="Tot_Harg" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="Tot_Harg1" min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Method_Pemb" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbPemb_CashOf" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnPemb_Transfer" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnPemb_COD" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnPemb_Cashbon" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="btnProses" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnClear" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Det_Pemb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Ringk_Bel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Nama_Pemb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Tot_Harg" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Tot_Harg1" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="edtNama_Pemb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Ongkir1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Ongkir" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Component id="Email_Pemb" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="edtEmail_Pemb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Method_Pemb" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Telp_Pemb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbPemb_CashOf" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="edtTelp_Pemb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnPemb_Transfer" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Alamat_Peng" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnPemb_COD" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="btnPemb_Cashbon" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnProses" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="56" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="Det_Pemb">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="DETAIL PEMBELI"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Nama_Pemb">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nama Pembeli"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="edtNama_Pemb">
+    </Component>
+    <Component class="javax.swing.JLabel" name="Email_Pemb">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Email Pembeli"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="edtEmail_Pemb">
+    </Component>
+    <Component class="javax.swing.JLabel" name="Telp_Pemb">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Telepon/Handphone"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="edtTelp_Pemb">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtTelp_PembActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Alamat_Peng">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Alamat Pengiriman"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="edtAlamat_Peng">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="Ringk_Bel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ringkasan Belanjaan"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Tot_Harg">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Total Harga"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Tot_Harg1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Label Buat Harga"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Ongkir1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ongkos Kirim"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Ongkir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Label Buat Ongkir"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Method_Pemb">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Metode Pembayaran"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbPemb_CashOf">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cash On Office"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="btnPemb_Transfer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Transfer"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="btnPemb_COD">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cash On Delivery"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="btnPemb_Cashbon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CashBon"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnProses">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Proses Pembelian"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnClear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clear"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>
