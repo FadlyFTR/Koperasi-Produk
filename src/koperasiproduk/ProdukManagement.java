@@ -7,22 +7,40 @@ package koperasiproduk;
 
 import java.sql.*;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.xml.crypto.Data;
 import net.proteanit.sql.DbUtils;
             
 public class ProdukManagement extends javax.swing.JFrame {
-    Connection con = null;
-    ResultSet rs = null;
+    Connection conn ;
+    ResultSet rs ;
     PreparedStatement pst=null;
     Statement statBrg;
-    boolean ada=false;
+    ConnectionManager cm = new ConnectionManager();
     /**
      * Creates new form ProdukManagement
      */
     public ProdukManagement() {
         initComponents();
-    }
 
+        
+    }
+    
+    private void tabel(){
+           String sql = "SELECT * FROM produk";
+       try{
+           cm.Logon();
+           System.out.println("oke");
+           pst = conn.prepareStatement(sql);
+           System.out.println("oke");
+           rs = pst.executeQuery();
+           System.out.println("oke");
+           t1.setModel(DbUtils.resultSetToTableModel(rs));
+           System.out.println("oke");
+       }catch(Exception ex){
+           JOptionPane.showMessageDialog(null, ex);
+       }
+       }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,89 +49,99 @@ public class ProdukManagement extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        table_produk = new javax.swing.JTable();
+        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("koperasiproduk?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
+        produkQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT p FROM Produk p");
+        produkList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : produkQuery.getResultList();
         jLabel1 = new javax.swing.JLabel();
         stoktf = new javax.swing.JTextField();
         kodetf = new javax.swing.JTextField();
         namatf = new javax.swing.JTextField();
         hargatf = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         simpanBtn = new javax.swing.JButton();
-        EditBtn = new javax.swing.JButton();
-        HapusBtn = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        Searchtf = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        Refresh = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        t1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        table_produk.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Kode", "Nama Barang", "Harga", "Stok"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(table_produk);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 690, 380));
-
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel1.setText("INPUT BARANG");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
-        getContentPane().add(stoktf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 140, -1));
-        getContentPane().add(kodetf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 140, -1));
-        getContentPane().add(namatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 140, -1));
-        getContentPane().add(hargatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 140, -1));
-
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel2.setText("Stok");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
+        getContentPane().add(stoktf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 190, -1));
+        getContentPane().add(kodetf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 190, -1));
+        getContentPane().add(namatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 190, -1));
+        getContentPane().add(hargatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 190, -1));
 
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel3.setText("Kode Barang");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel4.setText("Nama");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        jLabel4.setText("Nama Barang");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel5.setText("Harga (Rp.)");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
-        jButton1.setText("Clear");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 90, -1));
-
-        simpanBtn.setText("Simpan");
+        simpanBtn.setText("Add");
         simpanBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 simpanBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(simpanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 90, -1));
+        getContentPane().add(simpanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 100, 30));
 
-        EditBtn.setText("Edit");
-        getContentPane().add(EditBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 90, -1));
+        jLabel6.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        jLabel6.setText("Stok");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
-        HapusBtn.setText("Hapus");
-        getContentPane().add(HapusBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 90, -1));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Barang", "Harga", "Stock", "Kode" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 360, 30));
+        getContentPane().add(Searchtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 270, -1));
+
+        jButton1.setText("Cari...");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 90, -1));
+
+        Refresh.setText("Refresh");
+        Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 100, -1));
+
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, produkList, t1);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${kode}"));
+        columnBinding.setColumnName("Kode");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nama}"));
+        columnBinding.setColumnName("Nama");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${harga}"));
+        columnBinding.setColumnName("Harga");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${stok}"));
+        columnBinding.setColumnName("Stok");
+        columnBinding.setColumnClass(Integer.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
+
+        jScrollPane2.setViewportView(t1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 680, -1));
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -121,16 +149,18 @@ public class ProdukManagement extends javax.swing.JFrame {
     private void simpanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanBtnActionPerformed
         try {
             String sql = "INSERT INTO produk VALUES ('"+kodetf.getText()+"','"+namatf.getText()+"','"+hargatf.getText()+"','"+stoktf.getText()+"')";
-             ConnectionManager conMan = new ConnectionManager();
-            Connection conn = conMan.Logon();
-            String Respon;
-            java.sql.PreparedStatement pst=conn.prepareStatement(sql);
+            conn = cm.Logon();
+            pst = conn.prepareStatement(sql);
             pst.execute();
-            JOptionPane.showMessageDialog(null, "Penyimpanan Data Berhasil");
+            JOptionPane.showMessageDialog(null, "Input Data Berhasil");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_simpanBtnActionPerformed
+
+    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
+        tabel();
+    }//GEN-LAST:event_RefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,20 +198,25 @@ public class ProdukManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton EditBtn;
-    private javax.swing.JButton HapusBtn;
+    private javax.swing.JButton Refresh;
+    private javax.swing.JTextField Searchtf;
+    private javax.persistence.EntityManager entityManager;
     private javax.swing.JTextField hargatf;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField kodetf;
     private javax.swing.JTextField namatf;
+    private java.util.List<koperasiproduk.Produk> produkList;
+    private javax.persistence.Query produkQuery;
     private javax.swing.JButton simpanBtn;
     private javax.swing.JTextField stoktf;
-    private javax.swing.JTable table_produk;
+    private javax.swing.JTable t1;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
