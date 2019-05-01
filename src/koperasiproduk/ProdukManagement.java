@@ -70,7 +70,7 @@ public class ProdukManagement extends javax.swing.JFrame {
         simpanBtn = new javax.swing.JButton();
         Refresh = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Deletebtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -153,8 +153,13 @@ public class ProdukManagement extends javax.swing.JFrame {
         jButton2.setText("Edit");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 170, 50));
 
-        jButton3.setText("Delete");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 170, 50));
+        Deletebtn.setText("Delete");
+        Deletebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeletebtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 170, 50));
 
         bindingGroup.bind();
 
@@ -176,6 +181,24 @@ public class ProdukManagement extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_simpanBtnActionPerformed
+
+    private void DeletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletebtnActionPerformed
+        try { // hapus data
+        int baris = t1.getSelectedRow();
+            if (baris != -1) {
+                String KODE = t1.getValueAt(baris, 0).toString();
+                String sql ="delete from produk where kode='"+KODE+"'";
+                conn = cm.Logon();
+                pst = conn.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Delete Data Berhasil");
+            } else {
+            JOptionPane.showMessageDialog(this,"Pilih Baris Data Terlebih dahulu", "Error", JOptionPane.WARNING_MESSAGE);
+            }
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_DeletebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,13 +236,13 @@ public class ProdukManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Deletebtn;
     private javax.swing.JButton Refresh;
     private javax.swing.JTextField Searchtf;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JTextField hargatf;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
