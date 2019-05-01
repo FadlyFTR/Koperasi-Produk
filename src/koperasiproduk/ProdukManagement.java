@@ -30,11 +30,8 @@ public class ProdukManagement extends javax.swing.JFrame {
            String sql = "SELECT * FROM produk";
        try{
            cm.Logon();
-           System.out.println("oke");
            pst = conn.prepareStatement(sql);
-           System.out.println("oke");
            rs = pst.executeQuery();
-           System.out.println("oke");
            t1.setModel(DbUtils.resultSetToTableModel(rs));
            System.out.println("oke");
        }catch(Exception ex){
@@ -62,21 +59,26 @@ public class ProdukManagement extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        simpanBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         Searchtf = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        Refresh = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         t1 = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        simpanBtn = new javax.swing.JButton();
+        Refresh = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel1.setText("INPUT BARANG");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
         getContentPane().add(stoktf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 190, -1));
         getContentPane().add(kodetf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 190, -1));
         getContentPane().add(namatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 190, -1));
@@ -94,32 +96,16 @@ public class ProdukManagement extends javax.swing.JFrame {
         jLabel5.setText("Harga (Rp.)");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
-        simpanBtn.setText("Add");
-        simpanBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simpanBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(simpanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 100, 30));
-
         jLabel6.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel6.setText("Stok");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Barang", "Harga", "Stock", "Kode" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 360, 30));
-        getContentPane().add(Searchtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 270, -1));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 400, 30));
+        getContentPane().add(Searchtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 270, 30));
 
         jButton1.setText("Cari...");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 90, -1));
-
-        Refresh.setText("Refresh");
-        Refresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RefreshActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 100, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 130, 30));
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, produkList, t1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${kode}"));
@@ -139,12 +125,45 @@ public class ProdukManagement extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(t1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 680, -1));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 390, 430));
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jPanel4);
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 210, 250));
+
+        simpanBtn.setText("Add");
+        simpanBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpanBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(simpanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 170, 50));
+
+        Refresh.setText("Refresh");
+        Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 170, 50));
+
+        jButton2.setText("Edit");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 170, 50));
+
+        jButton3.setText("Delete");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 170, 50));
 
         bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
+        tabel();
+    }//GEN-LAST:event_RefreshActionPerformed
 
     private void simpanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanBtnActionPerformed
         try {
@@ -157,10 +176,6 @@ public class ProdukManagement extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_simpanBtnActionPerformed
-
-    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
-        tabel();
-    }//GEN-LAST:event_RefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,12 +218,16 @@ public class ProdukManagement extends javax.swing.JFrame {
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JTextField hargatf;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField kodetf;
     private javax.swing.JTextField namatf;
