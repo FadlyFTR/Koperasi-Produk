@@ -10,5 +10,4 @@ package koperasiproduk;
  * @author FDLY
  */
 public class Test {
-    
 }

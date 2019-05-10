@@ -51,153 +51,82 @@ public class PengelolaanPembayaran extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Det_Pemb.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Det_Pemb.setText("DETAIL PEMBELI");
+        getContentPane().add(Det_Pemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         Nama_Pemb.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Nama_Pemb.setText("Nama Pembeli");
+        getContentPane().add(Nama_Pemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 40, -1, -1));
+        getContentPane().add(edtNama_Pemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 69, 205, -1));
 
         Email_Pemb.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Email_Pemb.setText("Email Pembeli");
+        getContentPane().add(Email_Pemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 105, -1, -1));
+        getContentPane().add(edtEmail_Pemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 134, 205, -1));
 
         Telp_Pemb.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Telp_Pemb.setText("Telepon/Handphone");
+        getContentPane().add(Telp_Pemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 175, -1, -1));
 
         edtTelp_Pemb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edtTelp_PembActionPerformed(evt);
             }
         });
+        getContentPane().add(edtTelp_Pemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 199, 205, -1));
 
         Alamat_Peng.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Alamat_Peng.setText("Alamat Pengiriman");
+        getContentPane().add(Alamat_Peng, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 240, -1, -1));
 
         edtAlamat_Peng.setColumns(20);
         edtAlamat_Peng.setRows(5);
         jScrollPane1.setViewportView(edtAlamat_Peng);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 263, 205, -1));
+
         Ringk_Bel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Ringk_Bel.setText("Ringkasan Belanjaan");
+        getContentPane().add(Ringk_Bel, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 6, -1, -1));
 
         Tot_Harg.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Tot_Harg.setText("Total Harga");
+        getContentPane().add(Tot_Harg, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 40, -1, -1));
 
         Tot_Harg1.setText("Label Buat Harga");
+        getContentPane().add(Tot_Harg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 40, 120, 17));
 
         Ongkir1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Ongkir1.setText("Ongkos Kirim");
+        getContentPane().add(Ongkir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 75, -1, -1));
 
         Ongkir.setText("Label Buat Ongkir");
+        getContentPane().add(Ongkir, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 75, 120, -1));
 
         Method_Pemb.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Method_Pemb.setText("Metode Pembayaran");
+        getContentPane().add(Method_Pemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 136, -1, -1));
 
         cbPemb_CashOf.setText("Cash On Office");
+        getContentPane().add(cbPemb_CashOf, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 174, -1, -1));
 
         btnPemb_Transfer.setText("Transfer");
+        getContentPane().add(btnPemb_Transfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 204, -1, -1));
 
         btnPemb_COD.setText("Cash On Delivery");
+        getContentPane().add(btnPemb_COD, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 239, -1, -1));
 
         btnPemb_Cashbon.setText("CashBon");
+        getContentPane().add(btnPemb_Cashbon, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 265, -1, -1));
 
         btnProses.setText("Proses Pembelian");
+        getContentPane().add(btnProses, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 318, -1, -1));
 
         btnClear.setText("Clear");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Det_Pemb)
-                    .addComponent(Nama_Pemb)
-                    .addComponent(edtNama_Pemb)
-                    .addComponent(Email_Pemb)
-                    .addComponent(edtEmail_Pemb)
-                    .addComponent(Telp_Pemb)
-                    .addComponent(edtTelp_Pemb)
-                    .addComponent(Alamat_Peng)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Ongkir1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Ongkir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Ringk_Bel)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Tot_Harg)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Tot_Harg1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(251, 251, 251))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Method_Pemb)
-                            .addComponent(cbPemb_CashOf)
-                            .addComponent(btnPemb_Transfer)
-                            .addComponent(btnPemb_COD)
-                            .addComponent(btnPemb_Cashbon)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnProses)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnClear)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Det_Pemb)
-                    .addComponent(Ringk_Bel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Nama_Pemb)
-                    .addComponent(Tot_Harg)
-                    .addComponent(Tot_Harg1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtNama_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ongkir1)
-                    .addComponent(Ongkir))
-                .addGap(8, 8, 8)
-                .addComponent(Email_Pemb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtEmail_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Method_Pemb))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Telp_Pemb)
-                    .addComponent(cbPemb_CashOf))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtTelp_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPemb_Transfer))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Alamat_Peng)
-                    .addComponent(btnPemb_COD))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(btnPemb_Cashbon)
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnProses)
-                            .addComponent(btnClear))))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
+        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 318, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
