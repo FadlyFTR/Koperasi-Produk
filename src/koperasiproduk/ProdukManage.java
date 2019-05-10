@@ -13,12 +13,13 @@ import javax.swing.table.DefaultTableModel;
  * @author FDLY
  */
 public class ProdukManage extends javax.swing.JFrame {
-
+    ConnectionManager cm = new ConnectionManager();
     /**
      * Creates new form ProdukManage
      */
     public ProdukManage() {
         initComponents();
+        
         load_table();
     }
 
@@ -294,12 +295,10 @@ private void load_table(){
         model.addColumn("Merk");
         model.addColumn("Harga");
 
-        
         //menampilkan data database kedalam tabel
         try {
             int no=1;
-            String sql = "select * produk";
-            ConnectionManager cm = new ConnectionManager();
+            String sql = "select * from produk";
             java.sql.Connection conn=(Connection)cm.Logon();
             java.sql.Statement stm=conn.createStatement();
             java.sql.ResultSet res=stm.executeQuery(sql);
