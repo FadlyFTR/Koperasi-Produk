@@ -81,12 +81,12 @@ public class Pembayaran extends javax.swing.JFrame {
         Ringk_Bel.setText("Ringkasan Belanjaan");
 
         Tot_Harg.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Tot_Harg.setText("Total Harga");
+        Tot_Harg.setText("Total Harga    :");
 
         Tot_Harg1.setText("Label Buat Harga");
 
         Ongkir1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Ongkir1.setText("Ongkos Kirim");
+        Ongkir1.setText("Ongkos Kirim :");
 
         Ongkir.setText("Label Buat Ongkir");
 
@@ -109,10 +109,18 @@ public class Pembayaran extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 553, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(402, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Ongkir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnClear)
+                        .addGap(65, 65, 65))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 40, Short.MAX_VALUE)
+                    .addGap(0, 32, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(Det_Pemb)
@@ -127,9 +135,7 @@ public class Pembayaran extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(edtNama_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(60, 60, 60)
-                            .addComponent(Ongkir1)
-                            .addGap(6, 6, 6)
-                            .addComponent(Ongkir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Ongkir1))
                         .addComponent(Email_Pemb)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(edtEmail_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,14 +158,17 @@ public class Pembayaran extends javax.swing.JFrame {
                             .addGap(60, 60, 60)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(btnPemb_Cashbon)
-                                .addComponent(btnProses))
-                            .addGap(18, 18, 18)
-                            .addComponent(btnClear)))
-                    .addGap(0, 41, Short.MAX_VALUE)))
+                                .addComponent(btnProses))))
+                    .addGap(0, 32, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 441, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(Ongkir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
+                .addComponent(btnClear)
+                .addGap(57, 57, 57))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 43, Short.MAX_VALUE)
@@ -176,9 +185,7 @@ public class Pembayaran extends javax.swing.JFrame {
                         .addComponent(edtNama_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(6, 6, 6)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Ongkir1)
-                                .addComponent(Ongkir))))
+                            .addComponent(Ongkir1)))
                     .addGap(8, 8, 8)
                     .addComponent(Email_Pemb)
                     .addGap(12, 12, 12)
@@ -212,10 +219,7 @@ public class Pembayaran extends javax.swing.JFrame {
                             .addGap(2, 2, 2)
                             .addComponent(btnPemb_Cashbon)
                             .addGap(35, 35, 35)
-                            .addComponent(btnProses))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(55, 55, 55)
-                            .addComponent(btnClear)))
+                            .addComponent(btnProses)))
                     .addGap(0, 43, Short.MAX_VALUE)))
         );
 

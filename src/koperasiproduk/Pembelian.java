@@ -56,6 +56,11 @@ public class Pembelian extends javax.swing.JFrame {
 
         CB_Nambar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         CB_Nambar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CB_Nambar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_NambarActionPerformed(evt);
+            }
+        });
 
         btn_beli.setText("Beli");
         btn_beli.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +144,10 @@ public class Pembelian extends javax.swing.JFrame {
     private void tf_HargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_HargaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_HargaActionPerformed
+
+    private void CB_NambarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_NambarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_NambarActionPerformed
 
     /**
      * @param args the command line arguments
