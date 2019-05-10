@@ -5,6 +5,9 @@
  */
 package koperasiproduk;
 
+import java.sql.Connection;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author FDLY
@@ -16,6 +19,7 @@ public class ProdukManage extends javax.swing.JFrame {
      */
     public ProdukManage() {
         initComponents();
+        load_table();
     }
 
     /**
@@ -282,4 +286,28 @@ public class ProdukManage extends javax.swing.JFrame {
     private javax.swing.JButton simpanBtn;
     private javax.swing.JTextField stoktf;
     // End of variables declaration//GEN-END:variables
+
+private void load_table(){
+        // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Id Produk");
+        model.addColumn("Merk");
+        model.addColumn("Harga");
+
+        
+        //menampilkan data database kedalam tabel
+        try {
+            int no=1;
+            String sql = "select * produk";
+            ConnectionManager cm = new ConnectionManager();
+            java.sql.Connection conn=(Connection)cm.Logon();
+            java.sql.Statement stm=conn.createStatement();
+            java.sql.ResultSet res=stm.executeQuery(sql);
+            while(res.next()){
+                model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3)});
+            }
+            jTable1.setModel(model);
+        } catch (Exception e) {
+        }
+    }
 }

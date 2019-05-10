@@ -16,7 +16,6 @@ public class cekKoneksi {
     public static void main(String[] args) {
         ConnectionManager conMan = new ConnectionManager();
         Connection conn = conMan.Logon();
-        System.out.println("Koneksi Tersedia");
-    
+        System.out.println("CEK");
     }
 }
