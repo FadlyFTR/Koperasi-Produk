@@ -7,12 +7,12 @@ package koperasiproduk;
 
 /**
  *
- * @author HP
+ * @author FDLY
  */
 public class Pembelian extends javax.swing.JFrame {
 
     /**
-     * Creates new form Pembelian
+     * Creates new form PembayaranFORM
      */
     public Pembelian() {
         initComponents();
@@ -43,7 +43,6 @@ public class Pembelian extends javax.swing.JFrame {
         btn_selesai2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -58,11 +57,8 @@ public class Pembelian extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 59, 720, 296));
-
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("PEMBELIAN");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, -1));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,8 +72,6 @@ public class Pembelian extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(jTable2);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 533, 730, 290));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -146,15 +140,12 @@ public class Pembelian extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 720, -1));
-
         btn_selesai.setText("Hapus");
         btn_selesai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_selesaiActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_selesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 232, 45));
 
         btn_selesai1.setText("Konfirmasi");
         btn_selesai1.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +153,6 @@ public class Pembelian extends javax.swing.JFrame {
                 btn_selesai1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_selesai1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, 220, 45));
 
         btn_selesai2.setText("Edit");
         btn_selesai2.addActionListener(new java.awt.event.ActionListener() {
@@ -170,22 +160,64 @@ public class Pembelian extends javax.swing.JFrame {
                 btn_selesai2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_selesai2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 232, 45));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 730, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(305, 305, 305)
+                            .addComponent(jLabel1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(5, 5, 5)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(5, 5, 5)
+                            .addComponent(btn_selesai2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btn_selesai, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btn_selesai1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 803, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGap(17, 17, 17)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(15, 15, 15)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(12, 12, 12)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btn_selesai2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_selesai, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_selesai1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(8, 8, 8)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_beliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_beliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_beliActionPerformed
-
-    private void btn_selesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_selesaiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_selesaiActionPerformed
-
     private void tf_HargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_HargaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_HargaActionPerformed
+
+    private void btn_beliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_beliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_beliActionPerformed
 
     private void tf_Harga1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_Harga1ActionPerformed
         // TODO add your handling code here:
@@ -198,6 +230,10 @@ public class Pembelian extends javax.swing.JFrame {
     private void tf_Harga3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_Harga3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_Harga3ActionPerformed
+
+    private void btn_selesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_selesaiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_selesaiActionPerformed
 
     private void btn_selesai1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_selesai1ActionPerformed
         // TODO add your handling code here:
@@ -232,6 +268,7 @@ public class Pembelian extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Pembelian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
