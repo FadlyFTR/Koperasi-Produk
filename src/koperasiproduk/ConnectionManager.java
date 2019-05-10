@@ -16,6 +16,7 @@ public class ConnectionManager {
     public Connection Logon(){
         try{
             conn = DriverManager.getConnection(url,Username,Password);
+            System.out.println("Koneksi Tersedia");
         }catch (SQLException ex){
              System.err.println("koneksi gagal "+ex.getMessage());
         }
