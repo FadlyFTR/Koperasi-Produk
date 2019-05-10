@@ -12,15 +12,14 @@ public class ConnectionManager {
     private String url="jdbc:mysql://localhost:3306/koperasiproduk";
     private String user="root";
     private String pass="";
-    private com.mysql.jdbc.Connection mysqlconfig;
+   // private com.mysql.jdbc.Connection mysqlconfig;
     
     public Connection Logon(){
-        
         try{
-           conn = DriverManager.getConnection(url,user,pass);
+         conn = DriverManager.getConnection(url,user,pass);
 //            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 //            mysqlconfig=(com.mysql.jdbc.Connection)DriverManager.getConnection(url, user, pass);
-           System.out.println("Koneksi Tersedia");
+            System.out.println("Koneksi Tersedia");
         }catch (SQLException ex){
              System.err.println("koneksi gagal "+ex.getMessage());
         }
