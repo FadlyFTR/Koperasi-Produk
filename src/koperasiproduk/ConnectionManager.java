@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package koperasiproduk;
 
 import java.sql.Connection;
@@ -6,22 +11,22 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author FDLY
+ */
 public class ConnectionManager {
     private Connection conn;
     private String driver="com.sql.jdbc.Driver";
     private String url="jdbc:mysql://localhost:3306/koperasiproduk";
-    private String user="root";
-    private String pass="";
-   // private com.mysql.jdbc.Connection mysqlconfig;
+    private String Username="root";
+    private String Password="";
     
     public Connection Logon(){
         try{
-         conn = DriverManager.getConnection(url,user,pass);
-//            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-//            mysqlconfig=(com.mysql.jdbc.Connection)DriverManager.getConnection(url, user, pass);
-            System.out.println("Koneksi Tersedia");
+            conn = DriverManager.getConnection(url,Username,Password);
         }catch (SQLException ex){
-             System.err.println("koneksi gagal "+ex.getMessage());
+            ex.printStackTrace();
         }
         return conn;
     }
@@ -33,4 +38,5 @@ public class ConnectionManager {
             Logger.getLogger(ConnectionManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 }
