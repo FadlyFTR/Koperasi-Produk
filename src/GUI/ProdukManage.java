@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package koperasiproduk;
+package GUI;
 
+import Connection.ConnectionManager;
 import java.sql.Connection;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,8 +19,7 @@ public class ProdukManage extends javax.swing.JFrame {
      * Creates new form ProdukManage
      */
     public ProdukManage() {
-        initComponents();
-        
+        initComponents();     
         load_table();
     }
 
@@ -288,7 +288,10 @@ public class ProdukManage extends javax.swing.JFrame {
     private javax.swing.JTextField stoktf;
     // End of variables declaration//GEN-END:variables
 
-private void load_table(){
+    private void load_table() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+{
         // membuat tampilan model tabel
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Id Produk");
@@ -299,7 +302,7 @@ private void load_table(){
         try {
             int no=1;
             String sql = "select * from produk";
-            java.sql.Connection conn=(Connection)cm.Logon();
+            Connection conn = (Connection)cm.Logon();
             java.sql.Statement stm=conn.createStatement();
             java.sql.ResultSet res=stm.executeQuery(sql);
             while(res.next()){
@@ -309,4 +312,5 @@ private void load_table(){
         } catch (Exception e) {
         }
     }
+
 }
