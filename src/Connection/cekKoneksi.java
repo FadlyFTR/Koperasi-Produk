@@ -5,7 +5,7 @@
  */
 package Connection;
 
-import koperasiproduk.ConnectionManager;
+import Connection.ConnectionManager;
 import java.sql.Connection;
 
 /**
