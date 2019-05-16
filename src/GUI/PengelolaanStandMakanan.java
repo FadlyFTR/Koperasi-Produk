@@ -5,17 +5,27 @@
  */
 package GUI;
 
+import Connection.ConnectionManager;
+import Controller.ExecuteProduk2;
+import Model.Produk2;
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author M Rafi
  */
 public class PengelolaanStandMakanan extends javax.swing.JFrame {
-
+    ConnectionManager cm = new ConnectionManager();
+    ExecuteProduk2 ep = new ExecuteProduk2();
+            Produk2 pr2 = new Produk2();
     /**
      * Creates new form PengelolaanStandMakanan
      */
     public PengelolaanStandMakanan() {
         initComponents();
+        load_table();
     }
 
     /**
@@ -31,13 +41,13 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         tfkodemakanan = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        tfkodestand = new javax.swing.JTextField();
+        tfstok = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         tfharga = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblstandmakanan = new javax.swing.JTable();
+        tblmakanan = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        tfnamabarang = new javax.swing.JTextField();
+        tfnamamakanan = new javax.swing.JTextField();
         btnadd = new javax.swing.JButton();
         btndelete = new javax.swing.JButton();
         btnedit = new javax.swing.JButton();
@@ -58,7 +68,7 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel3.setText("Kode Stand");
+        jLabel3.setText("Stok");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setText("Harga");
@@ -69,26 +79,26 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
             }
         });
 
-        tblstandmakanan.setModel(new javax.swing.table.DefaultTableModel(
+        tblmakanan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
             },
             new String [] {
-                "Kode Makanan", "Nama Barang", "Kode Stand", "Harga"
+                "Kode Makanan", "Nama Barang", "Harga", "Stok"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblstandmakanan);
+        jScrollPane2.setViewportView(tblmakanan);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel6.setText("Nama Barang");
+        jLabel6.setText("Nama Makanan");
 
         btnadd.setText("Add");
         btnadd.addActionListener(new java.awt.event.ActionListener() {
@@ -105,48 +115,58 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
         });
 
         btnedit.setText("Edit");
+        btnedit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditActionPerformed(evt);
+            }
+        });
 
         btnrefresh.setText("Refresh");
+        btnrefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(107, 107, 107)
+                .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnedit, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnrefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(194, 194, 194))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnedit, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(btnrefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfnamabarang, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfnamamakanan, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(41, 41, 41)
                                 .addComponent(jLabel6))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(40, 40, 40)
                                 .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addComponent(jLabel4))
                             .addComponent(tfkodemakanan, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfkodestand, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfharga, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tfharga, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfstok, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
@@ -163,16 +183,16 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tfnamabarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfnamamakanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfharga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfkodestand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tfharga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73))
+                        .addComponent(tfstok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -196,12 +216,66 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
 
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         // TODO add your handling code here:
-        String kode = tfkodemakanan.getText().toString();
+        pr2.setKode(tfkodemakanan.getText());
+        pr2.setNama(tfnamamakanan.getText());
+        pr2.setHarga(tfharga.getText());
+        pr2.setStok(tfstok.getText());
+
+        String hasil = ep.InsertProduk2(pr2);
+        JOptionPane.showMessageDialog(rootPane, hasil);
+        load_table();    
     }//GEN-LAST:event_btnaddActionPerformed
 
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
         // TODO add your handling code here:
+        int column= tblmakanan.getSelectedColumn();
+        int row = tblmakanan.getSelectedRow();
+        if(column>=0){
+            int confirm = JOptionPane.showConfirmDialog(rootPane, "Are You Sure?");
+            if (confirm==0){
+                System.out.println("Konfirmasi: "+confirm);
+                Object id_produk = tblmakanan.getModel().getValueAt(row, 0);
+                ExecuteProduk2 em = new ExecuteProduk2();
+                ep.deleteProduk2((String)id_produk);
+                JOptionPane.showMessageDialog(rootPane, "Deleted");
+            tfkodemakanan.setText("");
+            tfnamamakanan.setText("");
+            tfharga.setText("");
+            tfstok.setText("");
+            } else if (confirm==1){
+            tfkodemakanan.setText("");
+            tfnamamakanan.setText("");
+            tfharga.setText("");
+            tfstok.setText("");
+            }
+            load_table();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Silahkan Pilih Data");
+        }
     }//GEN-LAST:event_btndeleteActionPerformed
+
+    private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
+        // TODO add your handling code here:
+        pr2.setKode(tfkodemakanan.getText().toString());
+        pr2.setNama(tfnamamakanan.getText().toString());
+        pr2.setHarga(tfharga.getText().toString());
+        pr2.setStok(tfstok.getText().toString());
+        
+        String Hasil = ep.UpdateProduk2(pr2);
+        JOptionPane.showMessageDialog(rootPane, Hasil);
+        if(Hasil=="Berhasil"){
+            tfkodemakanan.setText("");
+            tfnamamakanan.setText("");
+            tfharga.setText("");
+            tfstok.setText("");
+            load_table();
+        }
+    }//GEN-LAST:event_btneditActionPerformed
+
+    private void btnrefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefreshActionPerformed
+        // TODO add your handling code here:
+        load_table();
+    }//GEN-LAST:event_btnrefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,10 +323,35 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tblstandmakanan;
+    private javax.swing.JTable tblmakanan;
     private javax.swing.JTextField tfharga;
     private javax.swing.JTextField tfkodemakanan;
-    private javax.swing.JTextField tfkodestand;
-    private javax.swing.JTextField tfnamabarang;
+    private javax.swing.JTextField tfnamamakanan;
+    private javax.swing.JTextField tfstok;
     // End of variables declaration//GEN-END:variables
+
+    private void load_table() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Kode Produk");
+        model.addColumn("Nama Barang");
+        model.addColumn("Harga");
+        model.addColumn("Stok");
+
+        //menampilkan data database kedalam tabel
+        
+        try {
+            int no=1;
+            String sql = "SELECT * FROM produk WHERE id_produk LIKE 'M%'";
+            Connection conn = (Connection)cm.Logon();
+            java.sql.Statement stm=conn.createStatement();
+            java.sql.ResultSet res=stm.executeQuery(sql);
+            while(res.next()){
+                model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3)});
+            }
+            tblmakanan.setModel(model);
+        } catch (Exception e) {
+        }
+    }
 }

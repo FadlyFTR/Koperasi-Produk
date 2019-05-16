@@ -365,7 +365,7 @@ public class ProdukManage extends javax.swing.JFrame {
         
         try {
             int no=1;
-            String sql = "select * from produk";
+            String sql = "SELECT * FROM produk WHERE id_produk LIKE 'A%'";
             Connection conn = (Connection)cm.Logon();
             java.sql.Statement stm=conn.createStatement();
             java.sql.ResultSet res=stm.executeQuery(sql);
