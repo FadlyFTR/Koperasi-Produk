@@ -387,7 +387,7 @@ public class Pembelian extends javax.swing.JFrame {
     private javax.swing.JLabel lblqty;
     private javax.swing.JLabel lblqty1;
     private javax.swing.JLabel lbltgl;
-    private java.util.List<GUI.Order1> order1List;
+    private java.util.List<Model.Order1> order1List;
     private javax.persistence.Query order1Query;
     private java.util.List<GUI.Produk> produkList;
     private javax.persistence.Query produkQuery;
