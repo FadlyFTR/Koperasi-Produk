@@ -13,12 +13,10 @@
 
 
 -- Dumping database structure for koperasiproduk
-DROP DATABASE IF EXISTS `koperasiproduk`;
 CREATE DATABASE IF NOT EXISTS `koperasiproduk` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `koperasiproduk`;
 
 -- Dumping structure for table koperasiproduk.customer
-DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `id_cust` int(10) NOT NULL AUTO_INCREMENT,
   `nama_cust` varchar(30) NOT NULL,
@@ -33,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `customer` (
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 -- Dumping structure for table koperasiproduk.detail
-DROP TABLE IF EXISTS `detail`;
 CREATE TABLE IF NOT EXISTS `detail` (
   `id_produk` varchar(10) NOT NULL,
   `id_order` int(11) NOT NULL,
@@ -49,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `detail` (
 /*!40000 ALTER TABLE `detail` ENABLE KEYS */;
 
 -- Dumping structure for table koperasiproduk.order
-DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
   `id_cust` int(11) NOT NULL,
@@ -65,7 +61,6 @@ CREATE TABLE IF NOT EXISTS `order` (
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 -- Dumping structure for table koperasiproduk.pegawai
-DROP TABLE IF EXISTS `pegawai`;
 CREATE TABLE IF NOT EXISTS `pegawai` (
   `id_peg` varchar(10) NOT NULL,
   `id_produk` varchar(10) NOT NULL,
@@ -91,7 +86,6 @@ CREATE TABLE IF NOT EXISTS `pegawai` (
 /*!40000 ALTER TABLE `pegawai` ENABLE KEYS */;
 
 -- Dumping structure for table koperasiproduk.produk
-DROP TABLE IF EXISTS `produk`;
 CREATE TABLE IF NOT EXISTS `produk` (
   `id_produk` varchar(10) NOT NULL,
   `nama_produk` varchar(30) NOT NULL,
@@ -100,14 +94,13 @@ CREATE TABLE IF NOT EXISTS `produk` (
   PRIMARY KEY (`id_produk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table koperasiproduk.produk: ~3 rows (approximately)
+-- Dumping data for table koperasiproduk.produk: ~1 rows (approximately)
 /*!40000 ALTER TABLE `produk` DISABLE KEYS */;
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`, `Stok`) VALUES
-	('AA001', 'Garpit', 16000, NULL),
-	('AA002', 'Visval Bag', 200000, 30);
+	('1', 'adad', 1, 1),
+	('AA001', 'Garpit', 16000, NULL);
 /*!40000 ALTER TABLE `produk` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-customercustomerdetail

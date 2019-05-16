@@ -23,7 +23,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="553" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="318" max="32767" attributes="0"/>
+              <Component id="bts" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="btncod" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+          </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
@@ -53,31 +59,10 @@
                           <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                           <Component id="Method_Pemb" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="Telp_Pemb" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="153" pref="153" max="-2" attributes="0"/>
-                          <Component id="cbPemb_CashOf" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="edtTelp_Pemb" min="-2" pref="205" max="-2" attributes="0"/>
-                          <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                          <Component id="btnPemb_Transfer" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="Alamat_Peng" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="159" pref="159" max="-2" attributes="0"/>
-                          <Component id="btnPemb_COD" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnPemb_Cashbon" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnProses" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                          <Component id="btnClear" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="Telp_Pemb" min="-2" max="-2" attributes="0"/>
+                      <Component id="edtTelp_Pemb" min="-2" pref="205" max="-2" attributes="0"/>
+                      <Component id="Alamat_Peng" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
               </Group>
@@ -86,10 +71,17 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="441" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bts" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btncod" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="218" max="32767" attributes="0"/>
+          </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="43" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Det_Pemb" min="-2" max="-2" attributes="0"/>
                       <Component id="Ringk_Bel" min="-2" max="-2" attributes="0"/>
@@ -121,52 +113,15 @@
                           <Component id="Method_Pemb" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="Telp_Pemb" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="cbPemb_CashOf" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="edtTelp_Pemb" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                          <Component id="btnPemb_Transfer" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="Alamat_Peng" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="btnPemb_COD" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Component id="btnPemb_Cashbon" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
-                                  <Component id="btnProses" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                  <Component id="btnClear" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="127" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <Component id="Telp_Pemb" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Component id="edtTelp_Pemb" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="Alamat_Peng" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="127" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -279,34 +234,17 @@
         <Property name="text" type="java.lang.String" value="Metode Pembayaran"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="cbPemb_CashOf">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cash On Office"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="btnPemb_Transfer">
+    <Component class="javax.swing.JButton" name="bts">
       <Properties>
         <Property name="text" type="java.lang.String" value="Transfer"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="btnPemb_COD">
+    <Component class="javax.swing.JButton" name="btncod">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cash On Delivery"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="btnPemb_Cashbon">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="CashBon"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnProses">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Proses Pembelian"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnClear">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Clear"/>
+        <Property name="text" type="java.lang.String" value="COD"/>
       </Properties>
     </Component>
   </SubComponents>
