@@ -21,7 +21,6 @@ USE `koperasiproduk`;
 DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `id_cust` int(10) NOT NULL AUTO_INCREMENT,
-  `level` varchar(5) NOT NULL DEFAULT 'user',
   `nama_cust` varchar(30) NOT NULL,
   `username_cust` varchar(30) NOT NULL,
   `password_cust` varchar(30) NOT NULL,
@@ -53,15 +52,12 @@ CREATE TABLE IF NOT EXISTS `detail` (
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
-  `tgl_order` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_cust` int(11) NOT NULL,
-  `id_peg` varchar(10) NOT NULL,
+  `tgl_order` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Status` enum('Y','N') NOT NULL DEFAULT 'Y',
   PRIMARY KEY (`id_order`),
   KEY `FK_order_customer` (`id_cust`),
-  KEY `FK_order_pegawai` (`id_peg`),
-  CONSTRAINT `FK_order_customer` FOREIGN KEY (`id_cust`) REFERENCES `customer` (`id_cust`) ON DELETE CASCADE,
-  CONSTRAINT `FK_order_pegawai` FOREIGN KEY (`id_peg`) REFERENCES `pegawai` (`id_peg`) ON DELETE CASCADE
+  CONSTRAINT `FK_order_customer` FOREIGN KEY (`id_cust`) REFERENCES `customer` (`id_cust`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table koperasiproduk.order: ~0 rows (approximately)
@@ -73,9 +69,9 @@ DROP TABLE IF EXISTS `pegawai`;
 CREATE TABLE IF NOT EXISTS `pegawai` (
   `id_peg` varchar(10) NOT NULL,
   `id_produk` varchar(10) NOT NULL,
+  `id_customer` int(11) NOT NULL,
   `id_order` int(11) NOT NULL,
   `nama_peg` varchar(30) NOT NULL,
-  `Jumlah` int(11) NOT NULL,
   `email_peg` varchar(30) NOT NULL,
   `User_peg` varchar(50) NOT NULL,
   `password_cust` varchar(30) NOT NULL,
@@ -84,6 +80,8 @@ CREATE TABLE IF NOT EXISTS `pegawai` (
   PRIMARY KEY (`id_peg`),
   KEY `FK_pegawai_produk` (`id_produk`),
   KEY `FK_pegawai_order` (`id_order`),
+  KEY `FK_pegawai_customer` (`id_customer`),
+  CONSTRAINT `FK_pegawai_customer` FOREIGN KEY (`id_customer`) REFERENCES `customer` (`id_cust`) ON UPDATE CASCADE,
   CONSTRAINT `FK_pegawai_order` FOREIGN KEY (`id_order`) REFERENCES `order` (`id_order`) ON UPDATE CASCADE,
   CONSTRAINT `FK_pegawai_produk` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -98,13 +96,15 @@ CREATE TABLE IF NOT EXISTS `produk` (
   `id_produk` varchar(10) NOT NULL,
   `nama_produk` varchar(30) NOT NULL,
   `harga_produk` int(11) NOT NULL,
+  `Stok` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_produk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table koperasiproduk.produk: ~1 rows (approximately)
+-- Dumping data for table koperasiproduk.produk: ~3 rows (approximately)
 /*!40000 ALTER TABLE `produk` DISABLE KEYS */;
-INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`) VALUES
-	('AA001', 'Garpit', 16000);
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`, `Stok`) VALUES
+	('AA001', 'Garpit', 16000, NULL),
+	('AA002', 'Visval Bag', 200000, 30);
 /*!40000 ALTER TABLE `produk` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
