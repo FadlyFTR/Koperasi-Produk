@@ -106,7 +106,7 @@ public class Login extends javax.swing.JFrame {
             Connection kon  = DriverManager.getConnection("jdbc:mysql://localhost:3306/koperasiproduk","root","");
             ResultSet as = kon.createStatement().executeQuery("select * from customer where username='"+tf_uname.getText()+"' and passowrd='"+String.valueOf(tf_password.getText())+"'");
             if (as.next()){
-                PenglolaanToko pt = new PenglolaanToko();
+                PengelolaanToko pt = new PengelolaanToko();
                 pt.setVisible(true);
                 dispose();
             }else{
