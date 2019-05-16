@@ -43,12 +43,8 @@ public class Pembayaran extends javax.swing.JFrame {
         Ongkir1 = new javax.swing.JLabel();
         Ongkir = new javax.swing.JLabel();
         Method_Pemb = new javax.swing.JLabel();
-        cbPemb_CashOf = new javax.swing.JCheckBox();
-        btnPemb_Transfer = new javax.swing.JCheckBox();
-        btnPemb_COD = new javax.swing.JCheckBox();
-        btnPemb_Cashbon = new javax.swing.JCheckBox();
-        btnProses = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
+        bts = new javax.swing.JButton();
+        btncod = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,23 +89,25 @@ public class Pembayaran extends javax.swing.JFrame {
         Method_Pemb.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Method_Pemb.setText("Metode Pembayaran");
 
-        cbPemb_CashOf.setText("Cash On Office");
+        bts.setText("Transfer");
+        bts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btsActionPerformed(evt);
+            }
+        });
 
-        btnPemb_Transfer.setText("Transfer");
-
-        btnPemb_COD.setText("Cash On Delivery");
-
-        btnPemb_Cashbon.setText("CashBon");
-
-        btnProses.setText("Proses Pembelian");
-
-        btnClear.setText("Clear");
+        btncod.setText("COD");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 553, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(318, Short.MAX_VALUE)
+                .addComponent(bts)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btncod)
+                .addGap(97, 97, 97))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 40, Short.MAX_VALUE)
@@ -135,34 +133,23 @@ public class Pembayaran extends javax.swing.JFrame {
                             .addComponent(edtEmail_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(60, 60, 60)
                             .addComponent(Method_Pemb))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(Telp_Pemb)
-                            .addGap(153, 153, 153)
-                            .addComponent(cbPemb_CashOf))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(edtTelp_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(60, 60, 60)
-                            .addComponent(btnPemb_Transfer))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(Alamat_Peng)
-                            .addGap(159, 159, 159)
-                            .addComponent(btnPemb_COD))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(27, 27, 27)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnPemb_Cashbon)
-                                .addComponent(btnProses))
-                            .addGap(18, 18, 18)
-                            .addComponent(btnClear)))
+                        .addComponent(Telp_Pemb)
+                        .addComponent(edtTelp_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Alamat_Peng)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(0, 41, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 441, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(209, 209, 209)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bts)
+                    .addComponent(btncod))
+                .addContainerGap(218, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 43, Short.MAX_VALUE)
+                    .addGap(0, 52, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Det_Pemb)
                         .addComponent(Ringk_Bel))
@@ -187,40 +174,15 @@ public class Pembayaran extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(2, 2, 2)
                             .addComponent(Method_Pemb)))
+                    .addGap(13, 13, 13)
+                    .addComponent(Telp_Pemb)
                     .addGap(12, 12, 12)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(1, 1, 1)
-                            .addComponent(Telp_Pemb))
-                        .addComponent(cbPemb_CashOf))
-                    .addGap(7, 7, 7)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(edtTelp_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(5, 5, 5)
-                            .addComponent(btnPemb_Transfer)))
-                    .addGap(12, 12, 12)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(1, 1, 1)
-                            .addComponent(Alamat_Peng))
-                        .addComponent(btnPemb_COD))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(btnPemb_Cashbon)
-                                    .addGap(35, 35, 35)
-                                    .addComponent(btnProses))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(61, 61, 61)
-                                    .addComponent(btnClear)))
-                            .addGap(0, 58, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addComponent(edtTelp_Pemb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(21, 21, 21)
+                    .addComponent(Alamat_Peng)
+                    .addGap(11, 11, 11)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -229,6 +191,18 @@ public class Pembayaran extends javax.swing.JFrame {
     private void edtTelp_PembActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtTelp_PembActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtTelp_PembActionPerformed
+
+    private void btsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsActionPerformed
+        String Teks1 = edtNama_Pemb.getText();
+        String Teks2 = edtEmail_Pemb.getText();
+        String Teks3 = edtTelp_Pemb.getText();
+        String Teks4 = edtAlamat_Peng.getText();
+        
+        edtNama_Pemb.setText(Teks1);
+        edtEmail_Pemb.setText(Teks2);
+        edtTelp_Pemb.setText(Teks3);
+        edtAlamat_Peng.setText(Teks4);
+    }//GEN-LAST:event_btsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,7 +233,7 @@ public class Pembayaran extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        bts public void run() {
                 new Pembayaran().setVisible(true);
             }
         });
@@ -277,12 +251,8 @@ public class Pembayaran extends javax.swing.JFrame {
     private javax.swing.JLabel Telp_Pemb;
     private javax.swing.JLabel Tot_Harg;
     private javax.swing.JLabel Tot_Harg1;
-    private javax.swing.JButton btnClear;
-    private javax.swing.JCheckBox btnPemb_COD;
-    private javax.swing.JCheckBox btnPemb_Cashbon;
-    private javax.swing.JCheckBox btnPemb_Transfer;
-    private javax.swing.JButton btnProses;
-    private javax.swing.JCheckBox cbPemb_CashOf;
+    private javax.swing.JButton btncod;
+    private javax.swing.JButton bts;
     private javax.swing.JTextArea edtAlamat_Peng;
     private javax.swing.JTextField edtEmail_Pemb;
     private javax.swing.JTextField edtNama_Pemb;
