@@ -46,8 +46,6 @@ public class ExecuteProduk {
         String hasil="";
         String query ="update produk SET nama_produk='"+pr.getNama()+"',harga_produk='"+pr.getHarga()+"',Stok='"+pr.getStok()+"'where id_produk='"+pr.getKode()+"'";
         
-        // 
-        ConnectionManager conMan = new ConnectionManager();
         Connection conn = conMan.Logon();
         try {
             Statement stm = conn.createStatement();

@@ -5,19 +5,17 @@
  */
 package GUI;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import Controller.LoginSet;
+import Model.Log_set;
+
 
 /**
  *
  * @author Lenovo
  */
 public class Login extends javax.swing.JFrame {
+    String id, nama;
+ 
 
     /**
      * Creates new form Login
@@ -38,7 +36,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        tf_uname = new javax.swing.JTextField();
+        tf_user = new javax.swing.JTextField();
         tf_password = new javax.swing.JTextField();
         btn_login = new javax.swing.JButton();
 
@@ -62,60 +60,50 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(105, 105, 105)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_login)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tf_uname, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                                .addComponent(tf_password))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tf_user)
+                            .addComponent(tf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
+                        .addGap(46, 46, 46)
                         .addComponent(jLabel3)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(63, 63, 63)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(tf_uname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(tf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btn_login)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        try {
-            // TODO add your handling code here:
-            Connection kon  = DriverManager.getConnection("jdbc:mysql://localhost:3306/koperasiproduk","root","");
-            ResultSet as = kon.createStatement().executeQuery("select * from customer where username='"+tf_uname.getText()+"' and passowrd='"+String.valueOf(tf_password.getText())+"'");
-            if (as.next()){
-//                PenglolaanToko pt = new PenglolaanToko();
-//                pt.setVisible(true);
-                dispose();
-            }else{
-                JOptionPane.showMessageDialog(rootPane,"Masukan username dan password yang bernar");
-                
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        LoginSet ls = new LoginSet();
+        Log_set ls2 = new Log_set();
+        String user =  tf_user.getText();
+        String pass = tf_password.getText();
+        ls.LoginForm(user, pass);
+        System.out.println(ls2.toString());
     }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
@@ -159,6 +147,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField tf_password;
-    private javax.swing.JTextField tf_uname;
+    private javax.swing.JTextField tf_user;
     // End of variables declaration//GEN-END:variables
 }

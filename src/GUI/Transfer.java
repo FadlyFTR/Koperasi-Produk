@@ -31,153 +31,35 @@ public class Transfer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Det_Pemb = new javax.swing.JLabel();
-        Nama_Pemb = new javax.swing.JLabel();
-        Email_Pemb = new javax.swing.JLabel();
-        Telp_Pemb = new javax.swing.JLabel();
-        Alamat_Peng = new javax.swing.JLabel();
-        lblnorek = new javax.swing.JLabel();
-        lblnorek1 = new javax.swing.JLabel();
-        lblnorek2 = new javax.swing.JLabel();
-        lblnorek3 = new javax.swing.JLabel();
-        Ringk_Bel = new javax.swing.JLabel();
-        Tot_Harg = new javax.swing.JLabel();
-        Tot_Harg1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Det_Pemb.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        Det_Pemb.setText("Silahkan Lakukan Transfer");
+        jLabel2.setText("Total Belanja");
 
-        Nama_Pemb.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Nama_Pemb.setText("Nama Pembeli");
-
-        Email_Pemb.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Email_Pemb.setText("Email Pembeli");
-
-        Telp_Pemb.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Telp_Pemb.setText("Telepon/Handphone");
-
-        Alamat_Peng.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Alamat_Peng.setText("Alamat Pengiriman");
-
-        lblnorek.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        lblnorek.setText("BMM");
-
-        lblnorek1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        lblnorek1.setText("BBB");
-
-        lblnorek2.setText("098765437826547");
-
-        lblnorek3.setText("08475368283737");
-
-        Ringk_Bel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        Ringk_Bel.setText("Ringkasan Belanjaan");
-
-        Tot_Harg.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Tot_Harg.setText("Total Harga");
-
-        Tot_Harg1.setText("Label Buat Harga");
-
-        jLabel1.setText("TERIMAKASIH");
-
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
+        jLabel3.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jLabel3.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Det_Pemb)
-                            .addComponent(Email_Pemb)
-                            .addComponent(Telp_Pemb)
-                            .addComponent(Alamat_Peng)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblnorek)
-                                    .addComponent(lblnorek1))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblnorek3)
-                                    .addComponent(lblnorek2))))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Nama_Pemb)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Ringk_Bel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Tot_Harg)
-                                .addGap(19, 19, 19)
-                                .addComponent(Tot_Harg1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Det_Pemb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblnorek)
-                    .addComponent(lblnorek2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblnorek1)
-                    .addComponent(lblnorek3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Nama_Pemb)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Ringk_Bel)
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Tot_Harg)
-                            .addComponent(Tot_Harg1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Email_Pemb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(Telp_Pemb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(Alamat_Peng)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(328, Short.MAX_VALUE))
         );
 
         pack();
@@ -219,22 +101,7 @@ public class Transfer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Alamat_Peng;
-    private javax.swing.JLabel Det_Pemb;
-    private javax.swing.JLabel Email_Pemb;
-    private javax.swing.JLabel Nama_Pemb;
-    private javax.swing.JLabel Ringk_Bel;
-    private javax.swing.JLabel Telp_Pemb;
-    private javax.swing.JLabel Tot_Harg;
-    private javax.swing.JLabel Tot_Harg1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JLabel lblnorek;
-    private javax.swing.JLabel lblnorek1;
-    private javax.swing.JLabel lblnorek2;
-    private javax.swing.JLabel lblnorek3;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

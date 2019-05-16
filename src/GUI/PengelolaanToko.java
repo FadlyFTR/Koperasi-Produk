@@ -31,7 +31,6 @@ public class PengelolaanToko extends javax.swing.JFrame {
         lbl_menu = new javax.swing.JLabel();
         btn_barang = new javax.swing.JButton();
         order_btn = new javax.swing.JButton();
-        btn_makanan = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -40,6 +39,8 @@ public class PengelolaanToko extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btn_makan = new javax.swing.JButton();
+        nama_var = new javax.swing.JLabel();
+        id_lbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,7 +51,6 @@ public class PengelolaanToko extends javax.swing.JFrame {
         lbl_menu.setText("MENU");
 
         btn_barang.setText("BARANG");
-        btn_barang.setEnabled(false);
         btn_barang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_barangActionPerformed(evt);
@@ -58,18 +58,9 @@ public class PengelolaanToko extends javax.swing.JFrame {
         });
 
         order_btn.setText("ORDER");
-        order_btn.setEnabled(false);
         order_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 order_btnActionPerformed(evt);
-            }
-        });
-
-        btn_makanan.setText("TOKO");
-        btn_makanan.setEnabled(false);
-        btn_makanan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_makananActionPerformed(evt);
             }
         });
 
@@ -97,12 +88,15 @@ public class PengelolaanToko extends javax.swing.JFrame {
         jLabel3.setText("USER");
 
         btn_makan.setText("MAKANAN");
-        btn_makan.setEnabled(false);
         btn_makan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_makanActionPerformed(evt);
             }
         });
+
+        nama_var.setText("Nama");
+
+        id_lbl.setText("Id");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,9 +104,13 @@ public class PengelolaanToko extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 534, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_makanan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_makan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(btn_makan, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(247, 247, 247)
+                .addComponent(nama_var, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(id_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -147,11 +145,13 @@ public class PengelolaanToko extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(238, Short.MAX_VALUE)
+                .addGap(86, 86, 86)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nama_var)
+                    .addComponent(id_lbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                 .addComponent(btn_makan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_makanan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addGap(58, 58, 58))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 27, Short.MAX_VALUE)
@@ -186,25 +186,25 @@ public class PengelolaanToko extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_barangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_barangActionPerformed
-        // TODO add your handling code here:
-        new ProdukManage().show();
+        ProdukManage pm = new ProdukManage();
+        pm.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_btn_barangActionPerformed
 
     private void order_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_order_btnActionPerformed
-        // TODO add your handling code here:
+        Beli bl = new Beli();
+        bl.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_order_btnActionPerformed
 
-    private void btn_makananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_makananActionPerformed
-        // TODO add your handling code here:
-        new PengelolaanStandMakanan().show();
-    }//GEN-LAST:event_btn_makananActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btn_makanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_makanActionPerformed
-        // TODO add your handling code here:
+      PengelolaanStandMakanan pms = new PengelolaanStandMakanan();
+      pms.setVisible(true);
+      setVisible(false);  
     }//GEN-LAST:event_btn_makanActionPerformed
 
     /**
@@ -245,7 +245,7 @@ public class PengelolaanToko extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_barang;
     private javax.swing.JButton btn_makan;
-    private javax.swing.JButton btn_makanan;
+    private javax.swing.JLabel id_lbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -255,6 +255,7 @@ public class PengelolaanToko extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lbl_judul;
     private javax.swing.JLabel lbl_menu;
+    private javax.swing.JLabel nama_var;
     private javax.swing.JButton order_btn;
     // End of variables declaration//GEN-END:variables
 }
