@@ -60,6 +60,23 @@ public class ExecuteProduk {
         conMan.Logoff();
         return hasil;   
     }
+    
+        public String cariProduk (String id, String pr){
+        String hasil ="";
+        String query="select * from produk where '"+id+"' = '"+pr+"' ";
+        Connection conn = conMan.Logon();
+        System.out.println("Masuk");
+        try {
+            Statement stm = conn.createStatement();
+            stm.executeQuery(query);
+            hasil="Berhasil";
+        } catch (SQLException ex) {
+            hasil="Gagal";
+            Logger.getLogger(ExecuteProduk.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conMan.Logoff();
+        return hasil;  
+        }
 
         public String deleteProduk(String pr){
         String hasil ="";
