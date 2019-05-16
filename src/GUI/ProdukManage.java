@@ -19,6 +19,8 @@ import javax.swing.table.DefaultTableModel;
 public class ProdukManage extends javax.swing.JFrame {
     ConnectionManager cm = new ConnectionManager();
     ExecuteProduk ep = new ExecuteProduk();
+            Produk pr = new Produk();
+
     
     /**
      * Creates new form ProdukManage
@@ -121,6 +123,11 @@ public class ProdukManage extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,9 +146,8 @@ public class ProdukManage extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(10, 10, 10)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3))
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel3)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(kodetf, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,11 +227,10 @@ public class ProdukManage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void simpanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanBtnActionPerformed
-        Produk pr = new Produk();
 
-        pr.setNama(namatf.getText());
         pr.setKode(kodetf.getText());
-        pr.setHarga(kodetf.getText());
+        pr.setNama(namatf.getText());
+        pr.setHarga(hargatf.getText());
         pr.setStok(stoktf.getText());
 
         String hasil = ep.InsertProduk(pr);
@@ -234,16 +239,63 @@ public class ProdukManage extends javax.swing.JFrame {
     }//GEN-LAST:event_simpanBtnActionPerformed
 
     private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
-
+        load_table();
     }//GEN-LAST:event_RefreshActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+//        mengambil nilai dari komponen
+        pr.setNama(namatf.getText().toString());
+        pr.setKode(kodetf.getText().toString());
+        pr.setHarga(kodetf.getText().toString());
+        pr.setStok(stoktf.getText().toString());
+        
+        String Hasil = ep.UpdateProduk(pr);
+        JOptionPane.showMessageDialog(rootPane, Hasil);
+        if(Hasil=="Berhasil"){
+            kodetf.setText("");
+            namatf.setText("");
+            hargatf.setText("");
+            stoktf.setText("");
+            load_table();
+        }
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void DeletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletebtnActionPerformed
+        int column= jTable1.getSelectedColumn();
+        int row = jTable1.getSelectedRow();
+        if(column>=0){
+            int confirm = JOptionPane.showConfirmDialog(rootPane, "Are You Sure?");
+            if (confirm==0){
+                System.out.println("Konfirmasi: "+confirm);
+                Object id_produk = jTable1.getModel().getValueAt(row, 0);
+                ExecuteProduk em = new ExecuteProduk();
+                ep.deleteProduk((String)id_produk);
+                JOptionPane.showMessageDialog(rootPane, "Deleted");
+            kodetf.setText("");
+            namatf.setText("");
+            hargatf.setText("");
+            stoktf.setText("");
+            } else if (confirm==1){
+            kodetf.setText("");
+            namatf.setText("");
+            hargatf.setText("");
+            stoktf.setText("");
+            }
+            load_table();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Silahkan Pilih Data");
+        }
 
     }//GEN-LAST:event_DeletebtnActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int row = jTable1.getSelectedRow();
+        kodetf.setText(jTable1.getValueAt(row, 0).toString());
+        namatf.setText(jTable1.getValueAt(row, 1).toString());
+        hargatf.setText(jTable1.getValueAt(row, 2).toString());
+        stoktf.setText(jTable1.getValueAt(row, 3).toString());
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -310,6 +362,7 @@ public class ProdukManage extends javax.swing.JFrame {
         model.addColumn("Stok");
 
         //menampilkan data database kedalam tabel
+        
         try {
             int no=1;
             String sql = "select * from produk";

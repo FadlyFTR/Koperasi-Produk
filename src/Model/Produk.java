@@ -54,5 +54,10 @@ public class Produk {
         this.stok = stok;
     }
 
+    @Override
+    public String toString() {
+        return "Produk{" + "Kode=" + Kode + ", nama=" + nama + ", harga=" + harga + ", stok=" + stok + '}';
+    }
+
     
 }

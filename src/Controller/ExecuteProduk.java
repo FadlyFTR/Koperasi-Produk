@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Model.Produk;
+import java.sql.Statement;
 /**
  *
  * @author FDLY
@@ -20,21 +21,18 @@ public class ExecuteProduk {
     ConnectionManager conMan = new ConnectionManager();
     
     public String InsertProduk (Produk pr){
-        String query ="INSERT INTO koperasiproduk (id_produk, nama_produk, harga_produk)Values(?,?,?)";       
+        String query ="INSERT INTO produk (id_produk, nama_produk,harga_produk, stok)Values(?,?,?,?)";       
         Connection conn = conMan.Logon();
         System.out.println("cek");
         String Respon;
         try {
-            System.out.println("cek");
             PreparedStatement pstm = conn.prepareStatement(query);
             pstm.setString(1, pr.getKode());
-            System.out.println("cek");
             pstm.setString(2, pr.getNama());
-            System.out.println("cek");
             pstm.setString(3, pr.getHarga());
-            System.out.println("cek");
-//          pstm.setString(4, pr.getStok());
-            pstm.executeQuery();
+            pstm.setString(4, pr.getStok());
+            pstm.executeUpdate();
+            pr.toString();
             Respon="Insert Sukses";
         } catch (SQLException ex) {
             Respon="Insert Gagal";
@@ -43,4 +41,40 @@ public class ExecuteProduk {
         conMan.Logoff();
         return Respon;
     }
-}
+    
+    public String UpdateProduk(Produk pr){
+        String hasil="";
+        String query ="update produk SET nama_produk='"+pr.getNama()+"',harga_produk='"+pr.getHarga()+"',Stok='"+pr.getStok()+"'where id_produk='"+pr.getKode()+"'";
+        
+        // 
+        ConnectionManager conMan = new ConnectionManager();
+        Connection conn = conMan.Logon();
+        try {
+            Statement stm = conn.createStatement();
+             stm.executeUpdate(query);
+             hasil="Berhasil";
+        } catch (SQLException ex) {
+            hasil="Gagal";
+            Logger.getLogger(ExecuteProduk.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conMan.Logoff();
+        return hasil;   
+    }
+
+        public String deleteProduk(String pr){
+        String hasil ="";
+        String query="delete from produk where id_produk='"+pr+"'";
+        Connection conn = conMan.Logon();
+        try {
+            Statement stm = conn.createStatement();
+            stm.executeUpdate(query);
+            hasil="Berhasil";
+        } catch (SQLException ex) {
+            hasil="Gagal";
+            Logger.getLogger(ExecuteProduk.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conMan.Logoff();
+        return hasil;  
+    }
+
+}   
