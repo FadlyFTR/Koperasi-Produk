@@ -104,7 +104,7 @@ public class Login extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             Connection kon  = DriverManager.getConnection("jdbc:mysql://localhost:3306/koperasiproduk","root","");
-            ResultSet as = kon.createStatement().executeQuery("select * from customer where username='"+tf_uname.getText()+"' and passowrd='"+String.valueOf(tf_password.getText())+"'");
+            ResultSet as = kon.createStatement().executeQuery("select * from customer where username_cust='"+tf_uname.getText()+"' and password_cust='"+String.valueOf(tf_password.getText())+"'");
             if (as.next()){
                 PengelolaanToko pt = new PengelolaanToko();
                 pt.setVisible(true);
