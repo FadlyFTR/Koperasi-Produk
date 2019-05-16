@@ -98,6 +98,11 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
         });
 
         btndelete.setText("Delete");
+        btndelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndeleteActionPerformed(evt);
+            }
+        });
 
         btnedit.setText("Edit");
 
@@ -193,6 +198,10 @@ public class PengelolaanStandMakanan extends javax.swing.JFrame {
         // TODO add your handling code here:
         String kode = tfkodemakanan.getText().toString();
     }//GEN-LAST:event_btnaddActionPerformed
+
+    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btndeleteActionPerformed
 
     /**
      * @param args the command line arguments
