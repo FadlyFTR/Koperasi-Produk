@@ -9,29 +9,14 @@ package GUI;
  *
  * @author FDLY
  */
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
-public class Pembelian extends javax.swing.JFrame {
-    Connection connect = null;
-    ResultSet rst=null;
-    PreparedStatement pst=null;
-
-//    private Connection con;
-//    private Statement stat;
-//    private ResultSet res;
-
+public class Beli extends javax.swing.JFrame {
 
     /**
-     * Creates new form PembayaranFORM
+     * Creates new form Beli
      */
-    public Pembelian() {
+    public Beli() {
         initComponents();
-    }   
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,13 +26,7 @@ public class Pembelian extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("koperasiproduk?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
-        produkQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT p FROM Produk p");
-        produkList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : produkQuery.getResultList();
-        order1Query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT o FROM Order1 o");
-        order1List = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : order1Query.getResultList();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblproduk = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -73,23 +52,6 @@ public class Pembelian extends javax.swing.JFrame {
         tftglorder = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, produkList, tblproduk);
-        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${stok}"));
-        columnBinding.setColumnName("Stok");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${hargaProduk}"));
-        columnBinding.setColumnName("Harga Produk");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${namaProduk}"));
-        columnBinding.setColumnName("Nama Produk");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idProduk}"));
-        columnBinding.setColumnName("Id Produk");
-        columnBinding.setColumnClass(String.class);
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
 
         tblproduk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -98,31 +60,10 @@ public class Pembelian extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblproduk);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 40, 720, 210));
-
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("PEMBELIAN");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
-
-        jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, order1List, jTable2);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idOrder}"));
-        columnBinding.setColumnName("Id Order");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idCust}"));
-        columnBinding.setColumnName("Id Cust");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${tglOrder}"));
-        columnBinding.setColumnName("Tgl Order");
-        columnBinding.setColumnClass(java.util.Date.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${status}"));
-        columnBinding.setColumnName("Status");
-        columnBinding.setColumnClass(String.class);
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
 
         jScrollPane2.setViewportView(jTable2);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 730, 190));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -188,7 +129,7 @@ public class Pembelian extends javax.swing.JFrame {
                         .addComponent(lblqty)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tf_qty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 126, Short.MAX_VALUE)
+                .addGap(18, 123, Short.MAX_VALUE)
                 .addComponent(btn_beli, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -214,15 +155,12 @@ public class Pembelian extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 710, -1));
-
         btn_selesai.setText("Hapus");
         btn_selesai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_selesaiActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_selesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 232, 45));
 
         btn_selesai1.setText("Konfirmasi");
         btn_selesai1.addActionListener(new java.awt.event.ActionListener() {
@@ -230,7 +168,6 @@ public class Pembelian extends javax.swing.JFrame {
                 btn_selesai1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_selesai1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 220, 45));
 
         btn_selesai2.setText("Edit");
         btn_selesai2.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +175,6 @@ public class Pembelian extends javax.swing.JFrame {
                 btn_selesai2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_selesai2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 232, 45));
 
         lblidcust.setText("ID. Customer :");
 
@@ -259,7 +195,7 @@ public class Pembelian extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Tfidcust)
                     .addComponent(tftglorder, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap(421, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,36 +208,76 @@ public class Pembelian extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbltgl)
                     .addComponent(tftglorder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 710, 80));
-
-        bindingGroup.bind();
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 732, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(292, 292, 292)
+                            .addComponent(jLabel1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(2, 2, 2)
+                            .addComponent(btn_selesai2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(28, 28, 28)
+                            .addComponent(btn_selesai, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btn_selesai1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(2, 2, 2)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGap(18, 18, 18)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(10, 10, 10)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(10, 10, 10)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(36, 36, 36)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btn_selesai2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_selesai, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_selesai1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(5, 5, 5)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tblprodukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblprodukMouseClicked
+
+    }//GEN-LAST:event_tblprodukMouseClicked
+
     private void tf_idprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_idprodukActionPerformed
-        
+
     }//GEN-LAST:event_tf_idprodukActionPerformed
 
     private void btn_beliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_beliActionPerformed
-        try {                      
-            String sql="insert into order (id_cust, tgl_order) values (?,?)";    
-            
-            pst = connect.prepareStatement(sql);
-            pst.setString(1, Tfidcust.getText());
-            pst.setString(2, tftglorder.getText());
-            
-            pst.execute();
-            
-            JOptionPane.showMessageDialog(null, "Selamat");
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(this, e);
-        }
+
     }//GEN-LAST:event_btn_beliActionPerformed
 
     private void tf_qty1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_qty1ActionPerformed
@@ -328,10 +304,6 @@ public class Pembelian extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_selesai2ActionPerformed
 
-    private void tblprodukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblprodukMouseClicked
-
-    }//GEN-LAST:event_tblprodukMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -349,21 +321,20 @@ public class Pembelian extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pembelian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Beli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pembelian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Beli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pembelian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Beli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pembelian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Beli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pembelian().setVisible(true);
+                new Beli().setVisible(true);
             }
         });
     }
@@ -374,7 +345,6 @@ public class Pembelian extends javax.swing.JFrame {
     private javax.swing.JButton btn_selesai;
     private javax.swing.JButton btn_selesai1;
     private javax.swing.JButton btn_selesai2;
-    private javax.persistence.EntityManager entityManager;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -387,20 +357,11 @@ public class Pembelian extends javax.swing.JFrame {
     private javax.swing.JLabel lblqty;
     private javax.swing.JLabel lblqty1;
     private javax.swing.JLabel lbltgl;
-    private java.util.List<Model.Order1> order1List;
-    private javax.persistence.Query order1Query;
-    private java.util.List<GUI.Produk> produkList;
-    private javax.persistence.Query produkQuery;
     private javax.swing.JTable tblproduk;
     private javax.swing.JTextField tf_idproduk;
     private javax.swing.JTextField tf_idproduk1;
     private javax.swing.JTextField tf_qty;
     private javax.swing.JTextField tf_qty1;
     private javax.swing.JTextField tftglorder;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-
-    private void DoConnect() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

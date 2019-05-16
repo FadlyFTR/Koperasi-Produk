@@ -30,7 +30,7 @@ public class PengelolaanToko extends javax.swing.JFrame {
         lbl_judul = new javax.swing.JLabel();
         lbl_menu = new javax.swing.JLabel();
         btn_barang = new javax.swing.JButton();
-        btn_transaksi = new javax.swing.JButton();
+        order_btn = new javax.swing.JButton();
         btn_makanan = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -39,7 +39,7 @@ public class PengelolaanToko extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btn_makanan1 = new javax.swing.JButton();
+        btn_makan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,20 +50,23 @@ public class PengelolaanToko extends javax.swing.JFrame {
         lbl_menu.setText("MENU");
 
         btn_barang.setText("BARANG");
+        btn_barang.setEnabled(false);
         btn_barang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_barangActionPerformed(evt);
             }
         });
 
-        btn_transaksi.setText("ORDER");
-        btn_transaksi.addActionListener(new java.awt.event.ActionListener() {
+        order_btn.setText("ORDER");
+        order_btn.setEnabled(false);
+        order_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_transaksiActionPerformed(evt);
+                order_btnActionPerformed(evt);
             }
         });
 
         btn_makanan.setText("TOKO");
+        btn_makanan.setEnabled(false);
         btn_makanan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_makananActionPerformed(evt);
@@ -93,10 +96,11 @@ public class PengelolaanToko extends javax.swing.JFrame {
 
         jLabel3.setText("USER");
 
-        btn_makanan1.setText("MAKANAN");
-        btn_makanan1.addActionListener(new java.awt.event.ActionListener() {
+        btn_makan.setText("MAKANAN");
+        btn_makan.setEnabled(false);
+        btn_makan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_makanan1ActionPerformed(evt);
+                btn_makanActionPerformed(evt);
             }
         });
 
@@ -108,7 +112,7 @@ public class PengelolaanToko extends javax.swing.JFrame {
                 .addGap(0, 534, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_makanan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_makanan1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_makan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -130,7 +134,7 @@ public class PengelolaanToko extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(15, 15, 15)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btn_transaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(order_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(70, 70, 70)
                                     .addComponent(jLabel2))
@@ -143,13 +147,14 @@ public class PengelolaanToko extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(220, Short.MAX_VALUE)
-                .addComponent(btn_makanan1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(238, Short.MAX_VALUE)
+                .addComponent(btn_makan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_makanan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn_makanan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 12, Short.MAX_VALUE)
+                    .addGap(0, 27, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(35, 35, 35)
@@ -167,14 +172,14 @@ public class PengelolaanToko extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(3, 3, 3)
-                            .addComponent(btn_transaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(order_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(10, 10, 10)
                             .addComponent(jLabel2)
                             .addGap(4, 4, 4)
                             .addComponent(btn_barang, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(3, 3, 3)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 12, Short.MAX_VALUE)))
+                    .addGap(0, 27, Short.MAX_VALUE)))
         );
 
         pack();
@@ -185,10 +190,9 @@ public class PengelolaanToko extends javax.swing.JFrame {
         new ProdukManage().show();
     }//GEN-LAST:event_btn_barangActionPerformed
 
-    private void btn_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_transaksiActionPerformed
+    private void order_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_order_btnActionPerformed
         // TODO add your handling code here:
-        new Pembelian().show();
-    }//GEN-LAST:event_btn_transaksiActionPerformed
+    }//GEN-LAST:event_order_btnActionPerformed
 
     private void btn_makananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_makananActionPerformed
         // TODO add your handling code here:
@@ -199,9 +203,9 @@ public class PengelolaanToko extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void btn_makanan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_makanan1ActionPerformed
+    private void btn_makanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_makanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_makanan1ActionPerformed
+    }//GEN-LAST:event_btn_makanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,9 +244,8 @@ public class PengelolaanToko extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_barang;
+    private javax.swing.JButton btn_makan;
     private javax.swing.JButton btn_makanan;
-    private javax.swing.JButton btn_makanan1;
-    private javax.swing.JButton btn_transaksi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -252,5 +255,6 @@ public class PengelolaanToko extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lbl_judul;
     private javax.swing.JLabel lbl_menu;
+    private javax.swing.JButton order_btn;
     // End of variables declaration//GEN-END:variables
 }

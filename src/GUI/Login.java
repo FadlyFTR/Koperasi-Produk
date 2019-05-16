@@ -77,7 +77,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(jLabel3)))
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,7 +94,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(tf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btn_login)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -106,8 +106,8 @@ public class Login extends javax.swing.JFrame {
             Connection kon  = DriverManager.getConnection("jdbc:mysql://localhost:3306/koperasiproduk","root","");
             ResultSet as = kon.createStatement().executeQuery("select * from customer where username='"+tf_uname.getText()+"' and passowrd='"+String.valueOf(tf_password.getText())+"'");
             if (as.next()){
-                PenglolaanToko pt = new PenglolaanToko();
-                pt.setVisible(true);
+//                PenglolaanToko pt = new PenglolaanToko();
+//                pt.setVisible(true);
                 dispose();
             }else{
                 JOptionPane.showMessageDialog(rootPane,"Masukan username dan password yang bernar");
